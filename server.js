@@ -8,6 +8,9 @@ const Model = require('./models');
 const PORT = process.env.PORT || 5500;
 
 app.use('/api', controllers); // everything from the imported controllers folder will have the '/api' prefix.
+app.use(express.json());
+app.use(express.urlencoded({extended: true}));
+
 
 // app.get('/', (req, res) => {
 //     res.json('hi');
